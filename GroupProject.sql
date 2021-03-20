@@ -16,6 +16,6 @@ CREATE TABLE Career (
   Year_Started INT NOT NULL,
   Year_Ended INT NOT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (AlumID) REFERENCEs Alum(AlumID),
+  FOREIGN KEY (AlumID) REFERENCES Alum(AlumID),
   FOREIGN KEY (Name) REFERENCES Alum(FIrstName)
 );
