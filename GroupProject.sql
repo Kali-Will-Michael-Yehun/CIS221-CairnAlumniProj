@@ -21,6 +21,7 @@ CREATE TABLE Career (
   PRIMARY KEY (AlumID),
   FOREIGN KEY (AlumID) REFERENCES Alum(AlumID)
 );
-ALTER TABLE Career
+ALTER TABLE Career (
   CONSTRAINT validIndustry check (Industry in ('Medicine', 'Finance', 'Education', 'Technology', 'Law', 'Social Services', 'Counseling', 'Business', 'Agriculture', 'Manufacturing', 'Operations', 
                                                'Healthcare', 'Sales', 'Marketing', 'Administration', 'Information Technology', 'Support', 'Arts', 'Design', 'Media', 'Communication', 'Human Resources','engineering'))
+);
