@@ -21,6 +21,16 @@ CREATE TABLE Career (
   PRIMARY KEY (AlumID),
   FOREIGN KEY (AlumID) REFERENCES Alum(AlumID)
 );
+CREATE TABLE Guest Speakers (
+	SpeechID INT NOT NULL,
+	Date DATE,
+	Event VARCHAR(255) NOT NULL, 
+	Topic VARCHAR(255) NOT NULL,
+	Description VARCHAR(255),
+  AlumID INT NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (SpeechID), 
+	FOREIGN KEY (AlumID) REFERENCES Alum(AlumID)
+);
 ALTER TABLE Career 
   CONSTRAINT validIndustry check (Industry in ('Medicine', 'Finance', 'Education', 'Technology', 'Law', 'Social Services', 'Counseling', 'Business', 'Agriculture', 'Manufacturing', 'Operations', 
                                                'Healthcare', 'Sales', 'Marketing', 'Administration', 'Information Technology', 'Support', 'Arts', 'Design', 'Media', 'Communication', 'Human Resources','engineering'))
