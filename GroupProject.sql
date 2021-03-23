@@ -21,9 +21,9 @@ CREATE TABLE Career (
   PRIMARY KEY (AlumID),
   FOREIGN KEY (AlumID) REFERENCES Alum(AlumID)
 );
-CREATE TABLE Guest Speakers (
+CREATE TABLE GuestSpeakers (
 	SpeechID INT NOT NULL,
-	Date DATE,
+	Speech_Date DATE,
 	Event VARCHAR(255) NOT NULL, 
 	Topic VARCHAR(255) NOT NULL,
 	Description VARCHAR(255),
