@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS Degrees (
+	DegreeID int not null auto_increment primary key 
+  ,FOREIGN KEY (AlumID) REFERENCES Alum (AlumID)
+	,Und/Master char(1)
+	,DegreeLevel varchar(255) not null
+  ,School varchar(255) not null
+  ,GradDate DATE not null
+  ,InternshipCompany varchar(255)
+  ,InternshipPosition varchar(255)
+  ,IntershipDuration int
+);
+
+-- Dual-Level degrees can be found by determining which students received a BS in Business and MBA from Cairn --
+-- IntershipDuration: measured in terms of weeks --
