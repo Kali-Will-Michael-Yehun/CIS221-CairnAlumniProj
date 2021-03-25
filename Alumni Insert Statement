@@ -1,0 +1,6 @@
+INSERT INTO Alum(FirstName, LastName, Phone, Address, Email, LinkedIn)
+Values ('Emma', 'Holmes', 2152851898, 'Langhorne, PA', 'emmah09@gmail.com', 'https://www.linkedin.com/in/emma-holmes-602a261a2/detail/contact-info/')
+,('Jake', 'Arnoldy', 6103146436, 'Langhorne, PA', 'ja306@cairn.edu', 'https://www.linkedin.com/in/jake-arnoldy-32443319b/')
+,('Jim', 'Velez', 7878681525, 'Bucks County', 'jv470@cairn.edu', 'https://www.linkedin.com/in/jim-velez-6968721a2/')
+,('Jonathan', 'Wright', 2698232174, 'Langhorne, PA', 'jw471@cairn.edu', 'https://www.linkedin.com/in/jonathan-wright-559403168/')
+,('Tanner', 'Keeley', 4808454276, 'Langhorne, PA', 'Tannerkeeley51@gmail.com', 'https://www.linkedin.com/in/tanner-keeley-412b381a2/detail/contact-info/');
