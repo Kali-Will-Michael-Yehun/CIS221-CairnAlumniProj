@@ -10,8 +10,9 @@ CREATE TABLE Alum (
   Address VARCHAR(255),
   Email VARCHAR(255) NOT NULL,
   LinkedIn VARCHAR(255) NOT NULL,
+  Hiring bit NOT NULL DEFAULT 0,	--specifies whether an alunmi appears or has expressed interest/willingness/ability to hire other Cairn students/grads. 1 = yes.
   PRIMARY KEY (AlumID)
-);
+)Engine = InnoDB;
 
 --Will
 CREATE TABLE IF NOT EXISTS Degrees (
@@ -24,12 +25,12 @@ CREATE TABLE IF NOT EXISTS Degrees (
   ,InternshipCompany varchar(255)
   ,InternshipPosition varchar(255)
   ,IntershipDuration int
-);
+)Engine = InnoDB;
 -- Dual-Level degrees can be found by determining which students received a BS in Business and MBA from Cairn --
 -- IntershipDuration: measured in terms of weeks --
 
 --Michael
-CREATE TABLE Career (
+CREATE TABLE Careers (
   AlumID INT NOT NULL AUTO_INCREMENT,
   Industry VARCHAR(255) NOT NULL,
   Company VARCHAR(255) NOT NULL,
@@ -39,7 +40,7 @@ CREATE TABLE Career (
   Location VARCHAR(255),
   PRIMARY KEY (AlumID),
   FOREIGN KEY (AlumID) REFERENCES Alum(AlumID)
-);
+)Engine = InnoDB;
 
 --Yehun
 CREATE TABLE GuestSpeakers (
@@ -51,7 +52,7 @@ CREATE TABLE GuestSpeakers (
   AlumID INT NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (SpeechID), 
 	FOREIGN KEY (AlumID) REFERENCES Alum(AlumID)
-);
+)Engine = InnoDB;
 
 --Kali
 CREATE TABLE IF NOT EXISTS Comments(
@@ -61,6 +62,7 @@ CREATE TABLE IF NOT EXISTS Comments(
 	,UNIQUE(AlumID)		--https://www.w3schools.com/sql/sql_unique.asp
 )Engine = InnoDB;
 
-ALTER TABLE Career 
+--Limits the Valid Entries for Industry in Careers to specific industry names
+ALTER TABLE Careers 
   CONSTRAINT validIndustry check (Industry in ('Medicine', 'Finance', 'Education', 'Technology', 'Law', 'Social Services', 'Counseling', 'Business', 'Agriculture', 'Manufacturing', 'Operations', 
                                                'Healthcare', 'Research', 'Sales', 'Marketing', 'Administration', 'Information Technology', 'Support', 'Arts', 'Design', 'Media', 'Communication', 'Human Resources','Engineering'))
